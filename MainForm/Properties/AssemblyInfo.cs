@@ -5,10 +5,10 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MainForm")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Text Entropy")]
+[assembly: AssemblyDescription("Lab1 Serediuk Mykhailenko Demchenko")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("KhAI 535В")]
 [assembly: AssemblyProduct("MainForm")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
