@@ -1,13 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
+using HtmlAgilityPack;
 
 namespace TextParser
 {
-    public class Parser
+    public static class Parser
     {
-
+        public static string GetText(string url)
+        {
+            string result = String.Empty;
+            try
+            {
+                HtmlWeb web = new HtmlWeb();
+                var htmlDoc = web.Load(url);
+                result = htmlDoc.DocumentNode.SelectSingleNode("//body").InnerText;
+                
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return result;
+        }
     }
 }

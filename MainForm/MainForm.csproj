@@ -61,6 +61,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UrlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UrlForm.Designer.cs">
+      <DependentUpon>UrlForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="InputForm.resx">
       <DependentUpon>InputForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,6 +82,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UrlForm.resx">
+      <DependentUpon>UrlForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,6 +102,10 @@
     <ProjectReference Include="..\EntropyLib\EntropyLib.csproj">
       <Project>{12dbf214-2172-4c12-abb7-996ead5f623a}</Project>
       <Name>EntropyLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TextParser\TextParser.csproj">
+      <Project>{b44f03ee-1fc9-421a-a822-06c90274451a}</Project>
+      <Name>TextParser</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

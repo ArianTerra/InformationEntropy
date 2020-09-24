@@ -28,7 +28,7 @@ namespace MainForm
 
         private void Close_Click(object sender, EventArgs e)
         {
-            Close();
+            MainInput.Text = String.Empty;
         }
 
         private void TextFile_Click(object sender, EventArgs e)
@@ -53,6 +53,12 @@ namespace MainForm
             }
 
             MainInput.Text = text;
+        }
+
+        private void URLbutton_Click(object sender, EventArgs e)
+        {
+            UrlForm form = new UrlForm(this);
+            form.ShowDialog();
         }
     }
 }
