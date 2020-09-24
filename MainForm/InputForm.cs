@@ -20,9 +20,8 @@ namespace MainForm
 
         private void Process_Click(object sender, EventArgs e)
         {
-            OutputForm form = new OutputForm()
-
-            MainInput.Text;
+            OutputForm form = new OutputForm(EntropyData.GetData(MainInput.Text, Symbols.Checked));
+            form.ShowDialog();
         }
 
         private void Close_Click(object sender, EventArgs e)

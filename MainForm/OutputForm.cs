@@ -18,12 +18,12 @@ namespace MainForm
             InitializeComponent();
         }
 
-        public OutputForm(EntroyData dat) : this()
+        public OutputForm(EntropyData dat): this()
         {
             infoDat = dat;
         }
 
-        readonly EntroyData infoDat;
+        readonly EntropyData infoDat;
 
         private void OutputForm_Load(object sender, EventArgs e)
         {
@@ -35,6 +35,11 @@ namespace MainForm
 
             Chart.Series[0].Points.DataBindXY(xValues, yValues);
             Chart.Legends.Clear();
+        }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -32,6 +32,7 @@
             this.Process = new System.Windows.Forms.Button();
             this.TextFile = new System.Windows.Forms.Button();
             this.Close = new System.Windows.Forms.Button();
+            this.Symbols = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // MainInput
@@ -41,7 +42,7 @@
             this.MainInput.Location = new System.Drawing.Point(13, 13);
             this.MainInput.Multiline = true;
             this.MainInput.Name = "MainInput";
-            this.MainInput.Size = new System.Drawing.Size(708, 425);
+            this.MainInput.Size = new System.Drawing.Size(745, 425);
             this.MainInput.TabIndex = 0;
             this.MainInput.TabStop = false;
             this.MainInput.Text = "Enter your text here...";
@@ -49,7 +50,7 @@
             // Process
             // 
             this.Process.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Process.Location = new System.Drawing.Point(595, 444);
+            this.Process.Location = new System.Drawing.Point(632, 444);
             this.Process.Name = "Process";
             this.Process.Size = new System.Drawing.Size(126, 32);
             this.Process.TabIndex = 1;
@@ -60,7 +61,7 @@
             // TextFile
             // 
             this.TextFile.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextFile.Location = new System.Drawing.Point(463, 444);
+            this.TextFile.Location = new System.Drawing.Point(500, 444);
             this.TextFile.Name = "TextFile";
             this.TextFile.Size = new System.Drawing.Size(126, 32);
             this.TextFile.TabIndex = 2;
@@ -70,7 +71,7 @@
             // Close
             // 
             this.Close.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Close.Location = new System.Drawing.Point(331, 444);
+            this.Close.Location = new System.Drawing.Point(368, 444);
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(126, 32);
             this.Close.TabIndex = 3;
@@ -78,11 +79,23 @@
             this.Close.UseVisualStyleBackColor = true;
             this.Close.Click += new System.EventHandler(this.Close_Click);
             // 
+            // Symbols
+            // 
+            this.Symbols.AutoSize = true;
+            this.Symbols.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Symbols.Location = new System.Drawing.Point(13, 450);
+            this.Symbols.Name = "Symbols";
+            this.Symbols.Size = new System.Drawing.Size(325, 23);
+            this.Symbols.TabIndex = 4;
+            this.Symbols.Text = "Ignore any non-alphabetic symbols";
+            this.Symbols.UseVisualStyleBackColor = true;
+            // 
             // InputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(733, 488);
+            this.ClientSize = new System.Drawing.Size(770, 488);
+            this.Controls.Add(this.Symbols);
             this.Controls.Add(this.Close);
             this.Controls.Add(this.TextFile);
             this.Controls.Add(this.Process);
@@ -102,6 +115,7 @@
         private System.Windows.Forms.Button Process;
         private System.Windows.Forms.Button TextFile;
         private System.Windows.Forms.Button Close;
+        private System.Windows.Forms.CheckBox Symbols;
     }
 }
 
