@@ -90,7 +90,7 @@
             this.Controls.Add(this.Chart);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "OutputForm";
-            this.Text = "OutputForm";
+            this.Text = "Result";
             this.Load += new System.EventHandler(this.OutputForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Chart)).EndInit();
             this.ResumeLayout(false);

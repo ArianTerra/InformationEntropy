@@ -201,7 +201,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "InputForm";
-            this.Text = "Input Form";
+            this.Text = "Entropy";
             this.Load += new System.EventHandler(this.InputForm_Load);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
