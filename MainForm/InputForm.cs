@@ -75,5 +75,10 @@ namespace MainForm
 
             lettersLabel.Text = temp.Length.ToString();
         }
+
+        private void InputForm_Load(object sender, EventArgs e)
+        {
+            MainInput.Text += "."; //a dumb way to call TextChanged event on startup
+        }
     }
 }

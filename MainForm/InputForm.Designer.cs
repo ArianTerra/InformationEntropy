@@ -202,6 +202,7 @@
             this.MaximizeBox = false;
             this.Name = "InputForm";
             this.Text = "Input Form";
+            this.Load += new System.EventHandler(this.InputForm_Load);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
