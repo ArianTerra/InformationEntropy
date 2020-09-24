@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace EntropyLib
 {
-    public class EntroyData
+    public class EntrpoyData
     {
         public IEnumerable<KeyValuePair<char, double>> Frequency;
         public double Shennon = 0, Hartly = 0;
 
-        private EntroyData(IEnumerable<KeyValuePair<char, double>> frequency, double shennon, double hartly)
+        private EntrpoyData(IEnumerable<KeyValuePair<char, double>> frequency, double shennon, double hartly)
         {
             Frequency = frequency;
             Shennon = shennon;
             Hartly = hartly;
         }
-        public static EntroyData GetData(string text, bool onlyLetters)
+        public static EntrpoyData GetData(string text, bool onlyLetters)
         {
             int count;
             string temptext = string.Empty;
@@ -53,7 +53,7 @@ namespace EntropyLib
             // Расчет по формуле Хартли
             double hartly = Math.Log(dictionary.Keys.Count);
 
-            return new EntroyData(dictionary, shennon, hartly);
+            return new EntrpoyData(dictionary, shennon, hartly);
         }
     }
 }
