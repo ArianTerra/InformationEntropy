@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using EntropyLib;
 
@@ -64,7 +65,15 @@ namespace MainForm
         private void MainInput_TextChanged(object sender, EventArgs e)
         {
             charactersLabel.Text = MainInput.Text.Length.ToString();
-            
+            spacelessLabel.Text = string.Concat(MainInput.Text.Where(c => !char.IsWhiteSpace(c))).Length.ToString();
+
+            string temp = String.Empty;
+            foreach (char ch in MainInput.Text)
+            {
+                if (char.IsLetter(ch)) temp += ch.ToString();
+            }
+
+            lettersLabel.Text = temp.Length.ToString();
         }
     }
 }
