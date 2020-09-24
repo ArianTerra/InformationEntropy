@@ -8,9 +8,15 @@ namespace EntropyLib
 {
     public class EntroyData
     {
-        public List<KeyValuePair<char, double>> Frequency;
+        public IEnumerable<KeyValuePair<char, double>> Frequency;
         public double Shennon = 0, Hartly = 0;
 
+        private EntroyData(IEnumerable<KeyValuePair<char, double>> frequency, double shennon, double hartly)
+        {
+            Frequency = frequency;
+            Shennon = shennon;
+            Hartly = hartly;
+        }
         public static EntroyData GetData(string text, bool onlyLetters)
         {
             int count;
@@ -38,22 +44,16 @@ namespace EntropyLib
                 else
                     dictionary.Add(ch, 1);
             }
-            char[] l = dictionary.Keys.ToArray(); //refactor this
-            foreach (var key in l)
+            foreach (var key in dictionary.Keys.ToArray())
             {
                 dictionary[key] /= Convert.ToDouble(count);
             }
             // Расчет по формуле Шеннона
-            double Shennon = -dictionary.Count * dictionary.Values.Aggregate((s, x) => s + x * Math.Log(x));
+            double shennon = -dictionary.Count * dictionary.Values.Aggregate((s, x) => s + x * Math.Log(x));
             // Расчет по формуле Хартли
-            double Hartly = Math.Log(dictionary.Keys.Count);
+            double hartly = Math.Log(dictionary.Keys.Count);
 
-            EntroyData dat = new EntroyData();
-            dat.Frequency = dictionary.ToList();
-            dat.Shennon = Shennon;
-            dat.Hartly = Hartly;
-
-            return dat;
+            return new EntroyData(dictionary, shennon, hartly);
         }
     }
 }
