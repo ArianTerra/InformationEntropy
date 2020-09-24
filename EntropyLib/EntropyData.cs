@@ -55,6 +55,5 @@ namespace EntropyLib
             this.Hartly = hartly;
             this.Shennon = shennon;
         }
-        
     }
 }

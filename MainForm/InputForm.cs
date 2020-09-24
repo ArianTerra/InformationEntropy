@@ -14,9 +14,16 @@ namespace MainForm
 
         private void Process_Click(object sender, EventArgs e)
         {
-            OutputForm form = new OutputForm(new EntropyData(MainInput.Text, 
-                Symbols.Checked, SpacesIgnore.Checked));
-            form.ShowDialog();
+            if (!string.IsNullOrEmpty(MainInput.Text))
+            {
+                OutputForm form = new OutputForm(new EntropyData(MainInput.Text,
+                    Symbols.Checked, SpacesIgnore.Checked));
+                form.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("The text field is empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Close_Click(object sender, EventArgs e)
