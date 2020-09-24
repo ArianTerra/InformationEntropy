@@ -60,5 +60,11 @@ namespace MainForm
             UrlForm form = new UrlForm(this);
             form.ShowDialog();
         }
+
+        private void MainInput_TextChanged(object sender, EventArgs e)
+        {
+            charactersLabel.Text = MainInput.Text.Length.ToString();
+            
+        }
     }
 }

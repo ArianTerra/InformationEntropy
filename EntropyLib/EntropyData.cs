@@ -4,7 +4,6 @@ using System.Linq;
 
 namespace EntropyLib
 {
-    
     public class EntropyData
     {
         public IEnumerable<KeyValuePair<char, double>> Frequency;
