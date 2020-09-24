@@ -48,7 +48,7 @@ namespace EntropyLib
             // Расчет по формуле Хартли
             double hartly = Math.Log(dictionary.Keys.Count);
 
-            this.Frequency = dictionary;
+            this.Frequency = dictionary.OrderByDescending(x => x.Value);
             this.Hartly = hartly;
             this.Shennon = shennon;
         }
