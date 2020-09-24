@@ -10,7 +10,7 @@ namespace ConsoleTestApp
             Console.WriteLine("Enter text: ");
             string text = Console.ReadLine();
 
-            EntropyData data = EntropyData.GetData(text, true);
+            EntropyData data = new EntropyData(text, true);
             Console.WriteLine("Hartly: " + data.Hartly + " Shennon: " + data.Shennon);
             foreach (var key in data.Frequency)
             {

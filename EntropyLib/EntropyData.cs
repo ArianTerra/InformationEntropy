@@ -11,15 +11,9 @@ namespace EntropyLib
     public class EntropyData
     {
         public IEnumerable<KeyValuePair<char, double>> Frequency;
-        public double Shennon = 0, Hartly = 0;
+        public readonly double Shennon, Hartly;
 
-        private EntropyData(IEnumerable<KeyValuePair<char, double>> frequency, double shennon, double hartly)
-        {
-            Frequency = frequency;
-            Shennon = shennon;
-            Hartly = hartly;
-        }
-        public static EntropyData GetData(string text, bool onlyLetters = true, bool ignoreSpaces = true)
+        public EntropyData(string text, bool onlyLetters = true, bool ignoreSpaces = true)
         {
             string temptext = string.Empty;
             // Подсчитать количество всех символов
@@ -57,7 +51,10 @@ namespace EntropyLib
             // Расчет по формуле Хартли
             double hartly = Math.Log(dictionary.Keys.Count);
 
-            return new EntropyData(dictionary, shennon, hartly);
+            this.Frequency = dictionary;
+            this.Hartly = hartly;
+            this.Shennon = shennon;
         }
+        
     }
 }

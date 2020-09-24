@@ -14,7 +14,7 @@ namespace MainForm
 
         private void Process_Click(object sender, EventArgs e)
         {
-            OutputForm form = new OutputForm(EntropyData.GetData(MainInput.Text, 
+            OutputForm form = new OutputForm(new EntropyData(MainInput.Text, 
                 Symbols.Checked, SpacesIgnore.Checked));
             form.ShowDialog();
         }
