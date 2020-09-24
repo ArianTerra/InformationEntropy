@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TextParser
 {
-    public class Class1
+    public class Parser
     {
 
     }
