@@ -67,6 +67,7 @@
             this.TextFile.TabIndex = 2;
             this.TextFile.Text = "Open File";
             this.TextFile.UseVisualStyleBackColor = true;
+            this.TextFile.Click += new System.EventHandler(this.TextFile_Click);
             // 
             // Close
             // 
