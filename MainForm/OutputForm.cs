@@ -32,8 +32,9 @@ namespace MainForm
 
             Chart.ChartAreas[0].AxisX.Title = "Символы алфавита";
             Chart.ChartAreas[0].AxisY.Title = "Частота появления";
-
+            
             Chart.Series[0].Points.DataBindXY(xValues, yValues);
+            Chart.ChartAreas[0].AxisX.Interval = 1;
             Chart.Legends.Clear();
         }
 
