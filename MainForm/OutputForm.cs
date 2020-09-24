@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using EntropyLib;
 
@@ -33,7 +27,7 @@ namespace MainForm
             Chart.ChartAreas[0].AxisY.Title = "Частота появления";
             
             Chart.Series[0].Points.DataBindXY(xValues, yValues);
-            Chart.ChartAreas[0].AxisX.Interval = 0.5;
+            Chart.ChartAreas[0].AxisX.Interval = 1;
             Chart.Legends.Clear();
         }
 

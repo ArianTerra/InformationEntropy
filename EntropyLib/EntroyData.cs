@@ -2,10 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace EntropyLib
 {
+    public enum ProcessingMode
+    {
+        Simple,
+        IgnoreSpaces,
+        LettersOnly
+    }
     public class EntropyData
     {
         public IEnumerable<KeyValuePair<char, double>> Frequency;
@@ -17,22 +24,25 @@ namespace EntropyLib
             Shennon = shennon;
             Hartly = hartly;
         }
-        public static EntropyData GetData(string text, bool onlyLetters)
+        public static EntropyData GetData(string text, bool onlyLetters = true, bool ignoreSpaces = true)
         {
-            int count;
             string temptext = string.Empty;
             // Подсчитать количество всех символов
             if (onlyLetters)
             {
-                count = text.Count(x => char.IsLetter(x));
                 foreach (char ch in text)
                 {
                     if (char.IsLetter(ch)) temptext += ch.ToString();
                 }
             }
+            else if (ignoreSpaces)
+            {
+                temptext = text;
+                Regex.Replace(temptext, @"\s+", "");
+            }
             else
             {
-                count = text.Length;
+                //count = text.Length;
                 temptext = text;
             }
             // Получить пары символ-частота
@@ -46,7 +56,7 @@ namespace EntropyLib
             }
             foreach (var key in dictionary.Keys.ToArray())
             {
-                dictionary[key] /= Convert.ToDouble(count);
+                dictionary[key] /= Convert.ToDouble(temptext.Length);
             }
             // Расчет по формуле Шеннона
             double shennon = -dictionary.Count * dictionary.Values.Aggregate((s, x) => s + x * Math.Log(x));

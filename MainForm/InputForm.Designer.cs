@@ -33,6 +33,7 @@
             this.TextFile = new System.Windows.Forms.Button();
             this.Close = new System.Windows.Forms.Button();
             this.Symbols = new System.Windows.Forms.CheckBox();
+            this.SpacesIgnore = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // MainInput
@@ -93,16 +94,29 @@
             this.Symbols.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Symbols.Location = new System.Drawing.Point(13, 450);
             this.Symbols.Name = "Symbols";
-            this.Symbols.Size = new System.Drawing.Size(325, 23);
+            this.Symbols.Size = new System.Drawing.Size(136, 23);
             this.Symbols.TabIndex = 4;
-            this.Symbols.Text = "Ignore any non-alphabetic symbols";
+            this.Symbols.Text = "Letters only";
             this.Symbols.UseVisualStyleBackColor = true;
+            // 
+            // SpacesIgnore
+            // 
+            this.SpacesIgnore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.SpacesIgnore.AutoSize = true;
+            this.SpacesIgnore.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SpacesIgnore.Location = new System.Drawing.Point(164, 450);
+            this.SpacesIgnore.Name = "SpacesIgnore";
+            this.SpacesIgnore.Size = new System.Drawing.Size(145, 23);
+            this.SpacesIgnore.TabIndex = 5;
+            this.SpacesIgnore.Text = "Ignore spaces";
+            this.SpacesIgnore.UseVisualStyleBackColor = true;
             // 
             // InputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(770, 488);
+            this.Controls.Add(this.SpacesIgnore);
             this.Controls.Add(this.Symbols);
             this.Controls.Add(this.Close);
             this.Controls.Add(this.TextFile);
@@ -124,6 +138,7 @@
         private System.Windows.Forms.Button TextFile;
         private System.Windows.Forms.Button Close;
         private System.Windows.Forms.CheckBox Symbols;
+        private System.Windows.Forms.CheckBox SpacesIgnore;
     }
 }
 

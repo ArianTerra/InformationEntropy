@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using EntropyLib;
 
@@ -21,7 +14,8 @@ namespace MainForm
 
         private void Process_Click(object sender, EventArgs e)
         {
-            OutputForm form = new OutputForm(EntropyData.GetData(MainInput.Text, Symbols.Checked));
+            OutputForm form = new OutputForm(EntropyData.GetData(MainInput.Text, 
+                Symbols.Checked, SpacesIgnore.Checked));
             form.ShowDialog();
         }
 
@@ -32,7 +26,7 @@ namespace MainForm
 
         private void TextFile_Click(object sender, EventArgs e)
         {
-            string text = "";
+            string text = string.Empty;
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
