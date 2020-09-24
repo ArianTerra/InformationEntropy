@@ -7,12 +7,7 @@ using System.Threading.Tasks;
 
 namespace EntropyLib
 {
-    public enum ProcessingMode
-    {
-        Simple,
-        IgnoreSpaces,
-        LettersOnly
-    }
+    
     public class EntropyData
     {
         public IEnumerable<KeyValuePair<char, double>> Frequency;
@@ -35,15 +30,14 @@ namespace EntropyLib
                     if (char.IsLetter(ch)) temptext += ch.ToString();
                 }
             }
-            else if (ignoreSpaces)
-            {
-                temptext = text;
-                Regex.Replace(temptext, @"\s+", "");
-            }
             else
             {
-                //count = text.Length;
                 temptext = text;
+            }
+            //Удалить пустые символы если необходимо
+            if (ignoreSpaces)
+            {
+                temptext = string.Concat(temptext.Where(c => !char.IsWhiteSpace(c)));
             }
             // Получить пары символ-частота
             SortedDictionary<char, double> dictionary = new SortedDictionary<char, double>();
