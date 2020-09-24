@@ -13,6 +13,7 @@ namespace MainForm
 {
     public partial class OutputForm : Form
     {
+        readonly EntropyData infoDat;
         public OutputForm()
         {
             InitializeComponent();
@@ -21,10 +22,8 @@ namespace MainForm
         public OutputForm(EntropyData dat): this()
         {
             infoDat = dat;
+            infoLabel.Text = "Hartly: " + Math.Round(dat.Hartly, 4) + " Shennon: " + Math.Round(dat.Shennon, 4);
         }
-
-        readonly EntropyData infoDat;
-
         private void OutputForm_Load(object sender, EventArgs e)
         {
             double[] yValues = infoDat.Frequency.Select(x => x.Value).ToArray();
@@ -34,7 +33,7 @@ namespace MainForm
             Chart.ChartAreas[0].AxisY.Title = "Частота появления";
             
             Chart.Series[0].Points.DataBindXY(xValues, yValues);
-            Chart.ChartAreas[0].AxisX.Interval = 1;
+            Chart.ChartAreas[0].AxisX.Interval = 0.5;
             Chart.Legends.Clear();
         }
 
