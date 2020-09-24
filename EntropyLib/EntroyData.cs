@@ -11,39 +11,45 @@ namespace EntropyLib
         public List<KeyValuePair<char, double>> Frequency;
         public double Shennon = 0, Hartly = 0;
 
-        public static EntroyData GetInfo(string text)
+        public static EntroyData GetData(string text, bool onlyLetters)
         {
+            int count;
+            string temptext = string.Empty;
             // Подсчитать количество всех символов
-            int cn = text.Count(x => char.IsLetter(x));
-            int shft = 0;
-            char[] st = new char[cn];
-            // Получить строку состоящую исключительно из символов алфавита
-            foreach (char ch in text)
+            if (onlyLetters)
             {
-                if (char.IsLetter(ch))
-                    st[shft++] = ch;
+                count = text.Count(x => char.IsLetter(x));
+                foreach (char ch in text)
+                {
+                    if (char.IsLetter(ch)) temptext += ch.ToString();
+                }
+            }
+            else
+            {
+                count = text.Length;
+                temptext = text;
             }
             // Получить пары символ-частота
-            SortedDictionary<char, double> besort = new SortedDictionary<char, double>();
-            foreach (char ch in st)
+            SortedDictionary<char, double> dictionary = new SortedDictionary<char, double>();
+            foreach (char ch in temptext)
             {
-                if (besort.ContainsKey(ch))
-                    besort[ch]++;
+                if (dictionary.ContainsKey(ch))
+                    dictionary[ch]++;
                 else
-                    besort.Add(ch, 1);
+                    dictionary.Add(ch, 1);
             }
-            char[] l = besort.Keys.ToArray();
+            char[] l = dictionary.Keys.ToArray(); //refactor this
             foreach (var key in l)
             {
-                besort[key] /= Convert.ToDouble(cn);
+                dictionary[key] /= Convert.ToDouble(count);
             }
             // Расчет по формуле Шеннона
-            double Shennon = -besort.Count * besort.Values.Aggregate((s, x) => s + x * Math.Log(x));
+            double Shennon = -dictionary.Count * dictionary.Values.Aggregate((s, x) => s + x * Math.Log(x));
             // Расчет по формуле Хартли
-            double Hartly = Math.Log(besort.Keys.Count);
+            double Hartly = Math.Log(dictionary.Keys.Count);
 
             EntroyData dat = new EntroyData();
-            dat.Frequency = besort.ToList();
+            dat.Frequency = dictionary.ToList();
             dat.Shennon = Shennon;
             dat.Hartly = Hartly;
 
