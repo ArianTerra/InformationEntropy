@@ -40,7 +40,7 @@ namespace EntropyLib
             }
 
             // Расчет по формуле Хартли
-            double hartly = Math.Log(dictionary.Values.Aggregate(0.0, (s, x) => s + x), 2);
+            double hartly = temptext.Length * Math.Log(temptext.Length, 2);
 
             foreach (var key in dictionary.Keys.ToArray())
             {
@@ -48,7 +48,7 @@ namespace EntropyLib
             }
 
             // Расчет по формуле Шеннона
-            double shennon = -dictionary.Values.Aggregate(0.0, (s, x) => s + x * Math.Log(x, 2));
+            double shennon = -temptext.Length * dictionary.Values.Aggregate(0.0, (s, x) => s + x * Math.Log(x, 2));
 
             this.Frequency = dictionary.OrderByDescending(x => x.Value);
             this.Hartly = hartly;
