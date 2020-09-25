@@ -27,5 +27,20 @@ namespace MainForm
         {
             Close();
         }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Enter:
+                    buttonOK.PerformClick();
+                    break;
+                case Keys.Escape:
+                    buttonCancel.PerformClick();
+                    break;
+                default:
+                    break;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
     }
 }
