@@ -42,8 +42,9 @@ namespace EntropyLib
             {
                 dictionary[key] /= Convert.ToDouble(temptext.Length);
             }
+
             // Расчет по формуле Шеннона
-            double shennon = -dictionary.Count * dictionary.Values.Aggregate(0.0, (s, x) => s + x * Math.Log(x));
+            double shennon = -dictionary.Count * dictionary.Values.Aggregate(0.0, (s, x) => s + x * Math.Log(x, 2));
             // Расчет по формуле Хартли
             double hartly = Math.Log(dictionary.Keys.Count);
 
