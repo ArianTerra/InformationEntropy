@@ -40,7 +40,7 @@ namespace EntropyLib
             }
 
             // Расчет по формуле Хартли
-            double hartly = temptext.Length * Math.Log(temptext.Length, 2);
+            double hartly = temptext.Length * Math.Log(dictionary.Count, 2);
 
             foreach (var key in dictionary.Keys.ToArray())
             {
