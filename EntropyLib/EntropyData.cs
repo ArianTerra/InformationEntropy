@@ -46,7 +46,7 @@ namespace EntropyLib
             // Расчет по формуле Шеннона
             double shennon = -dictionary.Count * dictionary.Values.Aggregate(0.0, (s, x) => s + x * Math.Log(x, 2));
             // Расчет по формуле Хартли
-            double hartly = Math.Log(dictionary.Keys.Count);
+            double hartly = Math.Log(dictionary.Keys.Count, 2);
 
             this.Frequency = dictionary.OrderByDescending(x => x.Value);
             this.Hartly = hartly;
