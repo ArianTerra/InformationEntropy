@@ -76,8 +76,6 @@ namespace EntropyLib
         public List<List<double>> AlpDepBlap;
         public List<List<double>> BlapDepAlp; 
 
-        // Генерируем случайные вероятности появления символов для Alphabet и Blaphabet.
-        // После создаем случайные зависимости между ними с AlpDepBlap и BlapDepAlp.
         public EntropyDataCombined()
         {
             // Временные переменные.
@@ -163,3 +161,4 @@ namespace EntropyLib
         const int M = 10;
     }
 }
+
