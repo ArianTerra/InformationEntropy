@@ -136,7 +136,7 @@ namespace EntropyLib
                 BlapDepAlp = bvs.Select(x => x.Select(n => n).ToList()).ToList();
 
             // Расчет энтропий.
-            EntropyCombinedIndependent = (EntropyA = -Alphabet.Aggregate(0.0, (s, x) => s + x * Math.Log(x, 2))) *
+            EntropyCombinedIndependent = (EntropyA = -Alphabet.Aggregate(0.0, (s, x) => s + x * Math.Log(x, 2))) +
                 (EntropyB = -Blaphabet.Aggregate(0.0, (s, x) => s + x * Math.Log(x, 2)));
 
             EntropyCombinedAB = 0.0;
