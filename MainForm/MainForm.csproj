@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CombineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CombineForm.Designer.cs">
+      <DependentUpon>CombineForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InputForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="UrlForm.Designer.cs">
       <DependentUpon>UrlForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CombineForm.resx">
+      <DependentUpon>CombineForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InputForm.resx">
       <DependentUpon>InputForm.cs</DependentUpon>
     </EmbeddedResource>

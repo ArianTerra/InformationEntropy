@@ -6,7 +6,7 @@ namespace EntropyLib
 {
     public class EntropyData
     {
-        public IEnumerable<KeyValuePair<char, double>> Frequency;
+        public List<KeyValuePair<char, double>> Frequency;
         public readonly double Shennon, Hartly,
             Entropy, MaximumEntropy,
             Compression, Redundancy;
@@ -72,9 +72,9 @@ namespace EntropyLib
             EntropyCombinedIndependent,
             EntropyCombinedAB, EntropyCombinedBA;
 
-        public IEnumerable<double> Alphabet, Blaphabet;
-        public IEnumerable<IEnumerable<double>> AlpDepBlap;
-        public IEnumerable<IEnumerable<double>> BlapDepAlp; 
+        public List<double> Alphabet, Blaphabet;
+        public List<List<double>> AlpDepBlap;
+        public List<List<double>> BlapDepAlp; 
 
         // Генерируем случайные вероятности появления символов для Alphabet и Blaphabet.
         // После создаем случайные зависимости между ними с AlpDepBlap и BlapDepAlp.
@@ -98,7 +98,7 @@ namespace EntropyLib
             {
                 Alp[i] = (double)Back[i] / total;
             }
-            Alphabet = Alp.Select(x => x);
+            Alphabet = Alp.Select(x => x).ToList();
 
                 // Подбор вероятностей для второго алфавита.
                 for (int i = 0; i < M; i++)
@@ -110,7 +110,7 @@ namespace EntropyLib
                 {
                     Blp[i] = (double)Pack[i] / total;
                 }
-                Blaphabet = Blp.Select(x => x);
+                Blaphabet = Blp.Select(x => x).ToList();
 
             // Генерация зависимых событий.
             List<List<double>> avs = new List<List<double>>(M);
@@ -122,17 +122,18 @@ namespace EntropyLib
                     avs[i].Add(Ran.NextDouble());
                 }
             }
-            AlpDepBlap = avs.Select(x => x.Select(n => n));
+            AlpDepBlap = avs.Select(x => x.Select(n => n).ToList()).ToList();
 
                 List<List<double>> bvs = new List<List<double>>(M);
                 for (int i = 0; i < M; i++)
                 {
+                    bvs.Add(new List<double>(M));
                     for (int j = 0; j < M; j++)
                     {
                         bvs[i].Add(Ran.NextDouble());
                     }
                 }
-                BlapDepAlp = bvs.Select(x => x.Select(n => n));
+                BlapDepAlp = bvs.Select(x => x.Select(n => n).ToList()).ToList();
 
             // Расчет энтропий.
             EntropyCombinedIndependent = (EntropyA = Alphabet.Aggregate(0.0, (s, x) => s + x * Math.Log(x, 2))) *

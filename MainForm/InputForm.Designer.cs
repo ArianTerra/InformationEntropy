@@ -196,6 +196,7 @@
             this.Combine.TabIndex = 8;
             this.Combine.Text = "Combine";
             this.Combine.UseVisualStyleBackColor = true;
+            this.Combine.Click += new System.EventHandler(this.Combine_Click);
             // 
             // InputForm
             // 

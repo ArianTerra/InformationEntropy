@@ -80,5 +80,11 @@ namespace MainForm
         {
             MainInput.Text += "."; //a dumb way to call TextChanged event on startup
         }
+
+        private void Combine_Click(object sender, EventArgs e)
+        {
+            CombineForm of = new CombineForm();
+            of.ShowDialog();
+        }
     }
 }
