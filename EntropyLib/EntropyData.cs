@@ -7,12 +7,12 @@ namespace EntropyLib
     public class EntropyData
     {
         public IEnumerable<KeyValuePair<char, double>> Frequency;
-        public readonly double Shennon, Hartly;
-
+        public readonly double Shennon, Hartly, Entropy;
+        
         public EntropyData(string text, bool onlyLetters = true, bool ignoreSpaces = true)
         {
             string temptext = string.Empty;
-            // Подсчитать количество всех символов
+            // Подсчитать количество всех символов.
             if (onlyLetters)
             {
                 foreach (char ch in text)
@@ -24,12 +24,12 @@ namespace EntropyLib
             {
                 temptext = text;
             }
-            //Удалить пустые символы если необходимо
+            //Удалить пустые символы если необходимо.
             if (ignoreSpaces)
             {
                 temptext = string.Concat(temptext.Where(c => !char.IsWhiteSpace(c)));
             }
-            // Получить пары символ-частота
+            // Получить пары символ-частота.
             SortedDictionary<char, double> dictionary = new SortedDictionary<char, double>();
             foreach (char ch in temptext)
             {
@@ -39,7 +39,7 @@ namespace EntropyLib
                     dictionary.Add(ch, 1);
             }
 
-            // Расчет по формуле Хартли
+            // Расчет по формуле Хартли.
             double hartly = temptext.Length * Math.Log(dictionary.Count, 2);
 
             foreach (var key in dictionary.Keys.ToArray())
@@ -47,12 +47,15 @@ namespace EntropyLib
                 dictionary[key] /= Convert.ToDouble(temptext.Length);
             }
 
-            // Расчет по формуле Шеннона
-            double shennon = -temptext.Length * dictionary.Values.Aggregate(0.0, (s, x) => s + x * Math.Log(x, 2));
+            // Расчет энтропии.
+            double entropy = dictionary.Values.Aggregate(0.0, (s, x) => s + x * Math.Log(x, 2));
+            // Расчет по формуле Шеннона.
+            double shennon = -temptext.Length * entropy;
 
             this.Frequency = dictionary.OrderByDescending(x => x.Value);
             this.Hartly = hartly;
             this.Shennon = shennon;
+            this.Entropy = entropy;
         }
     }
 }

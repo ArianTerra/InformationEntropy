@@ -16,7 +16,7 @@ namespace MainForm
         public OutputForm(EntropyData dat): this()
         {
             infoDat = dat;
-            infoLabel.Text = "Hartly: " + Math.Round(dat.Hartly, 4) + " bit; Shennon: " + Math.Round(dat.Shennon, 4) + " bit";
+            infoLabel.Text = "Hartly: " + Math.Round(dat.Hartly, 4) + " bit; Shennon: " + Math.Round(dat.Shennon, 4) + " bit; Entropy: " + Math.Round(dat.Entropy, 4) +  "bit;";
         }
         private void OutputForm_Load(object sender, EventArgs e)
         {

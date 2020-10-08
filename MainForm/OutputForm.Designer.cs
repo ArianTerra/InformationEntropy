@@ -75,9 +75,9 @@
             this.infoLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.infoLabel.Location = new System.Drawing.Point(12, 451);
             this.infoLabel.Name = "infoLabel";
-            this.infoLabel.Size = new System.Drawing.Size(189, 19);
+            this.infoLabel.Size = new System.Drawing.Size(288, 19);
             this.infoLabel.TabIndex = 5;
-            this.infoLabel.Text = "Hartly: 0 Shennon: 0";
+            this.infoLabel.Text = "Hartly: 0 Shennon: 0 Entropy: 0";
             // 
             // OutputForm
             // 
