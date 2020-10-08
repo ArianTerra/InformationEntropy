@@ -42,6 +42,7 @@
             this.spacelessLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lettersLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.Combine = new System.Windows.Forms.Button();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             this.MainInput.Multiline = true;
             this.MainInput.Name = "MainInput";
             this.MainInput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.MainInput.Size = new System.Drawing.Size(745, 413);
+            this.MainInput.Size = new System.Drawing.Size(846, 413);
             this.MainInput.TabIndex = 0;
             this.MainInput.TabStop = false;
             this.MainInput.Text = "Enter your text here...";
@@ -66,7 +67,7 @@
             // 
             this.Process.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Process.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Process.Location = new System.Drawing.Point(659, 434);
+            this.Process.Location = new System.Drawing.Point(760, 434);
             this.Process.Name = "Process";
             this.Process.Size = new System.Drawing.Size(100, 32);
             this.Process.TabIndex = 1;
@@ -78,7 +79,7 @@
             // 
             this.TextFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TextFile.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextFile.Location = new System.Drawing.Point(553, 434);
+            this.TextFile.Location = new System.Drawing.Point(654, 434);
             this.TextFile.Name = "TextFile";
             this.TextFile.Size = new System.Drawing.Size(100, 32);
             this.TextFile.TabIndex = 2;
@@ -90,7 +91,7 @@
             // 
             this.Clear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Clear.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Clear.Location = new System.Drawing.Point(341, 434);
+            this.Clear.Location = new System.Drawing.Point(442, 434);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(100, 32);
             this.Clear.TabIndex = 3;
@@ -126,7 +127,7 @@
             // 
             this.URLbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.URLbutton.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.URLbutton.Location = new System.Drawing.Point(447, 434);
+            this.URLbutton.Location = new System.Drawing.Point(548, 434);
             this.URLbutton.Name = "URLbutton";
             this.URLbutton.Size = new System.Drawing.Size(100, 32);
             this.URLbutton.TabIndex = 6;
@@ -145,7 +146,7 @@
             this.lettersLabel});
             this.statusStrip.Location = new System.Drawing.Point(0, 466);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(770, 22);
+            this.statusStrip.Size = new System.Drawing.Size(871, 22);
             this.statusStrip.TabIndex = 7;
             this.statusStrip.Text = "statusStrip1";
             // 
@@ -164,7 +165,7 @@
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(77, 17);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(76, 17);
             this.toolStripStatusLabel2.Text = "Exept spaces:";
             // 
             // spacelessLabel
@@ -185,11 +186,23 @@
             this.lettersLabel.Size = new System.Drawing.Size(13, 17);
             this.lettersLabel.Text = "0";
             // 
+            // Combine
+            // 
+            this.Combine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Combine.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Combine.Location = new System.Drawing.Point(336, 434);
+            this.Combine.Name = "Combine";
+            this.Combine.Size = new System.Drawing.Size(100, 32);
+            this.Combine.TabIndex = 8;
+            this.Combine.Text = "Combine";
+            this.Combine.UseVisualStyleBackColor = true;
+            // 
             // InputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 488);
+            this.ClientSize = new System.Drawing.Size(871, 488);
+            this.Controls.Add(this.Combine);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.URLbutton);
             this.Controls.Add(this.SpacesIgnore);
@@ -225,6 +238,7 @@
         private System.Windows.Forms.ToolStripStatusLabel spacelessLabel;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel lettersLabel;
+        private System.Windows.Forms.Button Combine;
     }
 }
 

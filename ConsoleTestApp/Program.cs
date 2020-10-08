@@ -7,15 +7,12 @@ namespace ConsoleTestApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter text: ");
-            string text = Console.ReadLine();
+            string A = "Abakraba";
+            string B = "Barbara tsucik";
 
-            EntropyData data = new EntropyData(text, true);
-            Console.WriteLine("Hartly: " + data.Hartly + " Shennon: " + data.Shennon);
-            foreach (var key in data.Frequency)
-            {
-                Console.WriteLine(key.Key + " " + key.Value);
-            }
+            EntropyData ed1 = new EntropyData(A);
+            EntropyData ed2 = new EntropyData(B);
+
         }
     }
 }
