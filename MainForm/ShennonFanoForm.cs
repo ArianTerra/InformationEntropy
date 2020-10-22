@@ -13,8 +13,6 @@ namespace MainForm
 {
     public partial class ShennonFanoForm : Form
     {
-        List<Symbol> symbols;
-
         public ShennonFanoForm()
         {
             InitializeComponent();
@@ -22,7 +20,9 @@ namespace MainForm
 
         public ShennonFanoForm(EntropyData ed) : this()
         {
-            symbols = Symbol.ApplyEncoding(ed);
+            Symbol.FigureEncoding(ed);
+            string a = Symbol.ApplyEncoding(ed.Temptext);
+            string b = Symbol.ApplyDecoding(a);
         }
 
         private void ShennonFanoForm_Load(object sender, EventArgs e)
@@ -35,12 +35,12 @@ namespace MainForm
             Grid.Columns[1].HeaderText = "Probability";
             Grid.Columns[2].HeaderText = "Code";
 
-            for (int i = 0; i < symbols.Count; i++)
+            for (int i = 0; i < Symbol.symbols.Count; i++)
             {
                 Grid.Rows.Add();
-                Grid[0, i].Value = symbols[i].Name;
-                Grid[2, i].Value = symbols[i].Code;
-                Grid[1, i].Value = Math.Round(symbols[i].Probability, 4);
+                Grid[0, i].Value = Symbol.symbols[i].Name;
+                Grid[2, i].Value = Symbol.symbols[i].Code;
+                Grid[1, i].Value = Math.Round(Symbol.symbols[i].Probability, 4);
             }
         }
 
