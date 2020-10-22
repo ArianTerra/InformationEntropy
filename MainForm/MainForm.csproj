@@ -74,6 +74,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShennonFanoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShennonFanoForm.Designer.cs">
+      <DependentUpon>ShennonFanoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UrlForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ShennonFanoForm.resx">
+      <DependentUpon>ShennonFanoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UrlForm.resx">
       <DependentUpon>UrlForm.cs</DependentUpon>
     </EmbeddedResource>
