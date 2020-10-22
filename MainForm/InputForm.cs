@@ -20,8 +20,8 @@ namespace MainForm
                 EntropyData ed = new EntropyData(MainInput.Text, Symbols.Checked, SpacesIgnore.Checked);
                 OutputForm form = new OutputForm(ed);
                 ShennonFanoForm fanoForm = new ShennonFanoForm(ed);
-                form.ShowDialog();
-                fanoForm.ShowDialog();
+                form.Show();
+                fanoForm.Show();
             }
             else
             {

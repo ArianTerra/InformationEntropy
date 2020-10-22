@@ -21,8 +21,6 @@ namespace MainForm
         public ShennonFanoForm(EntropyData ed) : this()
         {
             Symbol.FigureEncoding(ed);
-            string a = Symbol.ApplyEncoding(ed.Temptext);
-            string b = Symbol.ApplyDecoding(a);
         }
 
         private void ShennonFanoForm_Load(object sender, EventArgs e)
