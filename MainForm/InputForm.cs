@@ -19,7 +19,7 @@ namespace MainForm
             {
                 EntropyData ed = new EntropyData(MainInput.Text, Symbols.Checked, SpacesIgnore.Checked);
                 OutputForm form = new OutputForm(ed);
-                ShennonFanoForm fanoForm = new ShennonFanoForm(ed);
+                ShennonFanoForm fanoForm = new ShennonFanoForm(ed, this);
                 form.Show();
                 fanoForm.Show();
             }

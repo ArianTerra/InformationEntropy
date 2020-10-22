@@ -30,6 +30,8 @@
         {
             this.Grid = new System.Windows.Forms.DataGridView();
             this.Close = new System.Windows.Forms.Button();
+            this.ReadButton = new System.Windows.Forms.Button();
+            this.WriteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,11 +59,37 @@
             this.Close.UseVisualStyleBackColor = true;
             this.Close.Click += new System.EventHandler(this.Close_Click);
             // 
+            // ReadButton
+            // 
+            this.ReadButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ReadButton.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ReadButton.Location = new System.Drawing.Point(60, 365);
+            this.ReadButton.Name = "ReadButton";
+            this.ReadButton.Size = new System.Drawing.Size(100, 32);
+            this.ReadButton.TabIndex = 10;
+            this.ReadButton.Text = "Read";
+            this.ReadButton.UseVisualStyleBackColor = true;
+            this.ReadButton.Click += new System.EventHandler(this.ReadButton_Click);
+            // 
+            // WriteButton
+            // 
+            this.WriteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.WriteButton.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.WriteButton.Location = new System.Drawing.Point(166, 365);
+            this.WriteButton.Name = "WriteButton";
+            this.WriteButton.Size = new System.Drawing.Size(100, 32);
+            this.WriteButton.TabIndex = 11;
+            this.WriteButton.Text = "Write";
+            this.WriteButton.UseVisualStyleBackColor = true;
+            this.WriteButton.Click += new System.EventHandler(this.WriteButton_Click);
+            // 
             // ShennonFanoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(386, 409);
+            this.Controls.Add(this.WriteButton);
+            this.Controls.Add(this.ReadButton);
             this.Controls.Add(this.Close);
             this.Controls.Add(this.Grid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -78,5 +106,7 @@
 
         private System.Windows.Forms.DataGridView Grid;
         private System.Windows.Forms.Button Close;
+        private System.Windows.Forms.Button ReadButton;
+        private System.Windows.Forms.Button WriteButton;
     }
 }
