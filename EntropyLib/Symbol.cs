@@ -25,6 +25,13 @@ namespace EntropyLib
         private static List<Symbol> EntropyDataToSymbols(EntropyData ed) => 
             ed.Frequency.Select(t => new Symbol(t.Key, t.Value)).ToList();
 
+        // Среднее количество кодовых символов приходящихся на один символ сообщения.
+        public static double MeanCodePerSymbol() => 
+            symbols.Aggregate(0.0, (s, x) => s + x.probability * x.CodeLength);
+
+        // Определение степени близости.
+        public static double HowNear(EntropyData ed) => (MeanCodePerSymbol() / ed.Entropy) - 1.0;
+
         // Найти коды.
         public static void FigureEncoding(EntropyData ed)
         {
@@ -102,7 +109,7 @@ namespace EntropyLib
             differences.Sort();
             return differences[0].Item2;
         }
-
+        
         public char Name { get => name; }
         public double Probability { get => probability; }
         public string Code { get => code; set => code = value; }

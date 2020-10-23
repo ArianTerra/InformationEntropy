@@ -4,6 +4,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 using EntropyLib;
+using System.Linq;
 
 namespace MainForm
 {
@@ -25,6 +26,9 @@ namespace MainForm
 
         private void ShennonFanoForm_Load(object sender, EventArgs e)
         {
+            StatusLabel.Text = $"Mean: {Math.Round(Symbol.MeanCodePerSymbol(), 4)}";
+            NearLabel.Text = $"Near: {Math.Round(Symbol.HowNear(entropyData), 4)}";
+
             Grid.Rows.Clear();
             Grid.RowHeadersVisible = false;
 
@@ -100,6 +104,8 @@ namespace MainForm
                 }
             }
 
+            StatusLabel.Text = $"Mean: {Math.Round(Symbol.MeanCodePerSymbol(), 4)}";
+            NearLabel.Text = $"Near: {Math.Round(Symbol.HowNear(entropyData), 4)}";
             inputForm.MainInput.Text = Symbol.ApplyDecoding(coded);
             inputForm.Focus();
         }
