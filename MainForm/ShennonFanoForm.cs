@@ -28,6 +28,7 @@ namespace MainForm
         {
             StatusLabel.Text = $"Mean: {Math.Round(Symbol.MeanCodePerSymbol(), 4)}";
             NearLabel.Text = $"Near: {Math.Round(Symbol.HowNear(entropyData), 4)}";
+            SpeedLabel.Text = $"Speed: {Math.Round(Symbol.Rspeed(entropyData), 4)}";
 
             Grid.Rows.Clear();
             Grid.RowHeadersVisible = false;
@@ -106,6 +107,7 @@ namespace MainForm
 
             StatusLabel.Text = $"Mean: {Math.Round(Symbol.MeanCodePerSymbol(), 4)}";
             NearLabel.Text = $"Near: {Math.Round(Symbol.HowNear(entropyData), 4)}";
+            SpeedLabel.Text = $"Speed: {Math.Round(Symbol.Rspeed(entropyData), 4)}";
             inputForm.MainInput.Text = Symbol.ApplyDecoding(coded);
             inputForm.Focus();
         }

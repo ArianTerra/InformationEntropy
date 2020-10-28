@@ -21,6 +21,18 @@ namespace EntropyLib
             this.code = "";
         }
 
+        // Расчитать скорость передачи данных
+        public static double Rspeed(EntropyData ed)
+        {
+            double t = 0.0;
+            Random r = new Random();
+            foreach (var Fr in ed.Frequency)
+            {
+                t += ((0.001 + r.NextDouble() % 0.001) * Fr.Value) * 1000000;
+            }                  
+            return ed.Entropy / t;
+        }
+
         // Конвертировать в необходиымй формат.
         private static List<Symbol> EntropyDataToSymbols(EntropyData ed) => 
             ed.Frequency.Select(t => new Symbol(t.Key, t.Value)).ToList();

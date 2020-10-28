@@ -35,6 +35,7 @@
             this.Status = new System.Windows.Forms.StatusStrip();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.NearLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.SpeedLabel = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.Status.SuspendLayout();
             this.SuspendLayout();
@@ -91,7 +92,8 @@
             // 
             this.Status.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StatusLabel,
-            this.NearLabel});
+            this.NearLabel,
+            this.SpeedLabel});
             this.Status.Location = new System.Drawing.Point(0, 390);
             this.Status.Name = "Status";
             this.Status.Size = new System.Drawing.Size(386, 22);
@@ -109,6 +111,12 @@
             this.NearLabel.Name = "NearLabel";
             this.NearLabel.Size = new System.Drawing.Size(35, 17);
             this.NearLabel.Text = "Near:";
+            // 
+            // SpeedLabel
+            // 
+            this.SpeedLabel.Name = "SpeedLabel";
+            this.SpeedLabel.Size = new System.Drawing.Size(67, 17);
+            this.SpeedLabel.Text = "SpeedLabel";
             // 
             // ShennonFanoForm
             // 
@@ -142,5 +150,6 @@
         private System.Windows.Forms.StatusStrip Status;
         private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel NearLabel;
+        private System.Windows.Forms.ToolStripStatusLabel SpeedLabel;
     }
 }
