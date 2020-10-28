@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MainForm.CombineForm" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAGAACBAAAACAAAhiAAAAAAAAAAAAAACQAAA=</HashCode>
+      <FileName>CombineForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainForm.InputForm" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAIAACFAAACAApCAAAACBAEABAgCAIABAAhQQAE=</HashCode>
+      <FileName>InputForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainForm.OutputForm" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAEiAAAAACAAAACAAAAAAAABAAAAACQAAA=</HashCode>
+      <FileName>OutputForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainForm.Program" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainForm.ShennonFanoForm" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAgAAACAAQAACEACAAAACgAAAAAAAAAAAEICQAAA=</HashCode>
+      <FileName>ShennonFanoForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainForm.UrlForm" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACQAABAAAACABAACkAAAAAAIEAAAAAEAAAA=</HashCode>
+      <FileName>UrlForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainForm.Properties.Resources" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainForm.Properties.Settings" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
