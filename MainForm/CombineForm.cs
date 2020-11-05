@@ -86,7 +86,8 @@ namespace MainForm
                 " bit; H(B): " + Math.Round(EDC.EntropyB, 3) +
                 " bit; H(A, B): " + Math.Round(EDC.EntropyCombinedIndependent, 3) +
                 " bit; \nH(A/B): " + Math.Round(EDC.EntropyCombinedAB, 3) +
-                " bit; H(B/A): " + Math.Round(EDC.EntropyCombinedBA, 3) + " bit";
+                " bit; H(B/A): " + Math.Round(EDC.EntropyCombinedBA, 3) + " bit; " +
+                    "I(A, B): " + Math.Round(EDC.IAB, 3) + " bit";
         }
 
         private void Close_Click(object sender, EventArgs e)
