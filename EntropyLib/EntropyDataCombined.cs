@@ -8,7 +8,7 @@ namespace EntropyLib
     {
         public readonly double EntropyA, EntropyB,
             EntropyCombinedIndependent,
-            EntropyCombinedAB, EntropyCombinedBA, IAB;
+            EntropyCombinedAB, EntropyCombinedBA, IAB, C;
 
         public List<double> Alphabet, Blaphabet;
         public List<List<double>> AlpDepBlap;
@@ -98,6 +98,7 @@ namespace EntropyLib
             EntropyCombinedBA = -EntropyCombinedBA;
 
             IAB = EntropyA - EntropyCombinedAB;
+            C = 1 / 0.005283 * (1 - EntropyCombinedBA);
         }
 
         const int M = 10;
