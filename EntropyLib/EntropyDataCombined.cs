@@ -8,7 +8,7 @@ namespace EntropyLib
     {
         public readonly double EntropyA, EntropyB,
             EntropyCombinedIndependent,
-            EntropyCombinedAB, EntropyCombinedBA;
+            EntropyCombinedAB, EntropyCombinedBA, IAB, C;
 
         public List<double> Alphabet, Blaphabet;
         public List<List<double>> AlpDepBlap;
@@ -55,7 +55,8 @@ namespace EntropyLib
                 avs.Add(new List<double>(M));
                 for (int j = 0; j < M; j++)
                 {
-                    avs[i].Add(Ran.NextDouble());
+                    var p = GetRandomNumber(Ran, 0.9, 1);
+                    avs[i].Add((1 - p)*p);
                 }
             }
             AlpDepBlap = avs.Select(x => x.Select(n => n).ToList()).ToList();
@@ -66,7 +67,8 @@ namespace EntropyLib
                 bvs.Add(new List<double>(M));
                 for (int j = 0; j < M; j++)
                 {
-                    bvs[i].Add(Ran.NextDouble());
+                    var p = GetRandomNumber(Ran, 0.9, 1);
+                    bvs[i].Add((1 - p) * p);
                 }
             }
             BlapDepAlp = bvs.Select(x => x.Select(n => n).ToList()).ToList();
@@ -94,8 +96,17 @@ namespace EntropyLib
                 }
             }
             EntropyCombinedBA = -EntropyCombinedBA;
+
+            IAB = EntropyA - EntropyCombinedAB;
+            C = 1 / 0.005283 * (1 - EntropyCombinedBA);
         }
 
         const int M = 10;
+
+        public double GetRandomNumber(Random random, double minimum, double maximum)
+        {
+            return random.NextDouble() * (maximum - minimum) + minimum;
+        }
     }
+    
 }
